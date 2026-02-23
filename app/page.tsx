@@ -1,18 +1,24 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Projects from "./components/Projects";
+import Profile from "./components/Profile";
 import Skills from "./components/Skills";
-import Contact from "./components/Contact";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+import Activities from "./components/Activities";
 import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-violet-500/30">
+    <main className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f] font-sans overflow-hidden">
       <Navbar />
       <Hero />
-      <Projects />
+      <Profile />
       <Skills />
-      <Contact />
+      <Projects />
+      <Experience />
+      <Education />
+      <Activities />
       <Footer />
     </main>
   );
