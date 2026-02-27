@@ -1,93 +1,97 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-apple-bg: #fbfbfd;
-  --color-apple-text: #1d1d1f;
-  --color-apple-text-secondary: #86868b;
-  --color-apple-border: rgba(0, 0, 0, 0.08);
-  --color-apple-accent: #0071e3;
-  --color-apple-card: #ffffff;
+  --color-primary-blue: #60A5FA;
+  --color-neon-purple: #A855F7;
+  --color-cyber-pink: #EC4899;
+  --color-bg-dark: #0F172A;
 }
 
 body {
-  background-color: var(--color-apple-bg);
-  color: var(--color-apple-text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.015em;
+  background-color: var(--color-bg-dark);
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.02em;
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Apple-style floating animation */
-@keyframes float-gentle {
-  0% {
-    transform: translateY(0px);
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateX(100%);
   }
 }
 
-.animate-float-gentle {
-  animation: float-gentle 8s ease-in-out infinite;
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }
 
-/* Glassmorphism utility */
-.glass-panel-light {
-  background: var(--color-apple-glass);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 1px solid var(--color-apple-border);
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Apple-style card */
-.apple-card {
-  background: #ffffff;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.04), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+/* Glowing border effect */
+.glow-border {
+  position: relative;
 }
 
-.apple-card:hover {
-  transform: translateY(-4px) scale(1.005);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.04);
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, var(--color-primary-blue), var(--color-neon-purple), var(--color-cyber-pink));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Smooth Scrollbar */
+.glow-border:hover::before {
+  opacity: 1;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #0F172A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
+  background: #334155;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: #475569;
 }
 
-/* Clean utility hiding scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

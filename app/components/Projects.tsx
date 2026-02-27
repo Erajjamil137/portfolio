@@ -1,134 +1,110 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FileSearch, Package, LineChart, Folder, Gamepad2, Mail, Github, ExternalLink } from "lucide-react";
 
 const projects = [
     {
         title: "LexiFind",
-        subtitle: "Legal Information Retrieval System",
-        status: "Current Project",
-        category: "AI / NLP",
-        color: "bg-blue-50"
+        description: "Legal Information Retrieval System - Currently developing an AI-powered system to streamline legal research and information access.",
+        icon: <FileSearch className="w-8 h-8 text-white" />,
+        tech: ["Python", "NLP", "Machine Learning", "Information Retrieval"],
+        gradient: "from-purple-400 to-pink-500",
+        shadowColor: "shadow-purple-500/20"
     },
     {
-        title: "PMS Prediction System",
-        subtitle: "Machine Learning Models",
-        category: "Machine Learning",
-        color: "bg-purple-50"
+        title: "Retail Management",
+        description: "Full-featured retail management application with database integration and intuitive UI for managing inventory and sales.",
+        icon: <Package className="w-8 h-8 text-white" />,
+        tech: ["C#", "MySQL", "WinForms", "Database Design"],
+        gradient: "from-blue-400 to-cyan-500",
+        shadowColor: "shadow-blue-500/20"
     },
     {
         title: "Recommendation System",
-        subtitle: "Python-based analytics",
-        category: "Data Science",
-        color: "bg-orange-50"
-    },
-    {
-        title: "Temperature & Rainfall Pattern",
-        subtitle: "Review Paper Analysis",
-        category: "Research",
-        color: "bg-green-50"
-    },
-    {
-        title: "Retail Management System",
-        subtitle: "MySQL + C# WinForms",
-        category: "Desktop App",
-        color: "bg-indigo-50"
-    },
-    {
-        title: "Shoe Retail Management System",
-        subtitle: "ETL Pipeline Integration",
-        category: "Data Engineering",
-        color: "bg-rose-50"
+        description: "Python-based recommendation engine using machine learning algorithms to provide personalized suggestions.",
+        icon: <LineChart className="w-8 h-8 text-white" />,
+        tech: ["Python", "Machine Learning", "Data Analysis", "Pandas"],
+        gradient: "from-green-400 to-emerald-500",
+        shadowColor: "shadow-green-500/20"
     },
     {
         title: "File Explorer",
-        subtitle: "C++ Data Structures",
-        category: "Algorithms",
-        color: "bg-amber-50"
+        description: "Custom file explorer built with C++ implementing advanced data structures for efficient file management.",
+        icon: <Folder className="w-8 h-8 text-white" />,
+        tech: ["C++", "Data Structures", "OOP", "File Systems"],
+        gradient: "from-orange-400 to-red-500",
+        shadowColor: "shadow-orange-500/20"
+    },
+    {
+        title: "Pacman Game",
+        description: "Classic Pacman game recreated applying object-oriented programming principles and game development concepts.",
+        icon: <Gamepad2 className="w-8 h-8 text-white" />,
+        tech: ["C++", "OOP", "Game Development", "Graphics"],
+        gradient: "from-yellow-400 to-orange-500",
+        shadowColor: "shadow-yellow-500/20"
     },
     {
         title: "Mail Server",
-        subtitle: "OSI Model & Networking Concepts",
-        category: "Networking",
-        color: "bg-sky-50"
-    },
-    {
-        title: "Pacman",
-        subtitle: "Object-Oriented Programming Concepts",
-        category: "Game Dev",
-        color: "bg-red-50"
-    },
-    {
-        title: "Tic-Tac-Toe Game",
-        subtitle: "Console-Based Interactive Game",
-        category: "Console",
-        color: "bg-gray-50"
+        description: "Network mail server implementation applying OSI model rules and protocols for message transmission.",
+        icon: <Mail className="w-8 h-8 text-white" />,
+        tech: ["Networking", "OSI Model", "CISCO", "Protocols"],
+        gradient: "from-indigo-400 to-purple-500",
+        shadowColor: "shadow-indigo-500/20"
     }
 ];
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-24 md:py-32 bg-white relative">
+        <section id="projects" className="py-24 md:py-32 relative">
             <div className="max-w-7xl mx-auto px-6">
 
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
-                    <div>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-4xl md:text-6xl font-bold tracking-tight text-[#1d1d1f] mb-4"
-                        >
-                            Selected Works.
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-xl text-[#86868b] max-w-lg"
-                        >
-                            A showcase of academic research, intelligent systems, and structured algorithms.
-                        </motion.p>
-                    </div>
+                <div className="text-center mb-16">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-4xl md:text-5xl font-black text-white mb-4"
+                    >
+                        Featured <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">Projects</span>
+                    </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={index}
-                            className={`apple-card flex flex-col h-[400px] overflow-hidden group cursor-pointer border border-[rgba(0,0,0,0.02)]`}
+                            className={`glow-border bg-slate-800/80 rounded-2xl p-6 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 shadow-xl ${project.shadowColor} border border-slate-700/50 backdrop-blur-sm z-10 w-full relative group`}
                         >
-                            <div className={`flex-1 ${project.color} flex items-center justify-center relative overflow-hidden transition-colors duration-500`}>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <span className="material-symbols-outlined text-8xl text-black/5 group-hover:scale-110 transition-transform duration-700 ease-out">
-                                    all_match
-                                </span>
-
-                                {project.status && (
-                                    <div className="absolute top-6 right-6">
-                                        <span className="px-3 py-1 bg-white/60 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-widest border border-black/5 text-[#1d1d1f]">
-                                            {project.status}
-                                        </span>
-                                    </div>
-                                )}
+                            <div className="flex justify-between items-start mb-6">
+                                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                    {project.icon}
+                                </div>
+                                <div className="flex gap-3">
+                                    <a href="#" className="text-gray-400 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
+                                    <a href="#" className="text-gray-400 hover:text-white transition-colors"><ExternalLink className="w-5 h-5" /></a>
+                                </div>
                             </div>
 
-                            <div className="p-8 md:p-10 bg-white z-10">
-                                <p className="text-xs font-bold text-[#86868b] uppercase tracking-widest mb-2">
-                                    {project.category}
-                                </p>
-                                <h3 className="text-2xl font-bold text-[#1d1d1f] mb-2 tracking-tight">
-                                    {project.title}
-                                </h3>
-                                <p className="text-[#86868b] font-medium leading-relaxed">
-                                    {project.subtitle}
-                                </p>
+                            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                                {project.title}
+                            </h3>
+
+                            <p className="text-gray-400 mb-6 flex-grow line-clamp-4">
+                                {project.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-auto">
+                                {project.tech.map((tech, i) => (
+                                    <span key={i} className="px-3 py-1 bg-slate-900 rounded-full text-xs font-medium text-purple-300 border border-purple-500/20">
+                                        {tech}
+                                    </span>
+                                ))}
                             </div>
                         </motion.div>
                     ))}

@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Eraj Jamil - AI Developer Portfolio",
-  description: "Personal portfolio of Eraj Jamil, showcasing projects and skills.",
+  description: "AI Student & Developer building intelligent systems.",
 };
 
 export default function RootLayout({
@@ -15,12 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth bg-[#fbfbfd]">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className={`${inter.className} text-[#1d1d1f] font-sans selection:bg-[#0071e3] selection:text-white overflow-x-hidden min-h-screen flex flex-col`}>
+    <html lang="en" className="dark scroll-smooth bg-[#0F172A]">
+      <body className={`${inter.className} text-white font-sans selection:bg-[#A855F7] selection:text-white overflow-x-hidden min-h-screen flex flex-col`}>
         {children}
       </body>
     </html>
