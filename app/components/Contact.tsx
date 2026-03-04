@@ -67,13 +67,13 @@ export default function Contact() {
                         <h3 className="text-4xl font-black text-white mb-6 tracking-tight">Let's Connect</h3>
 
                         <div className="flex flex-col gap-6 mb-10 w-full max-w-sm">
-                            <a href="mailto:erajjamil@example.com" className="flex items-center gap-4 bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl hover:bg-slate-800 hover:border-blue-500/50 transition-all group">
+                            <a href="mailto:erajjamil07@gmail.com" className="flex items-center gap-4 bg-slate-800/50 border border-slate-700/50 p-4 rounded-xl hover:bg-slate-800 hover:border-blue-500/50 transition-all group">
                                 <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                                     <Mail />
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold text-gray-400 text-left">Email Me</p>
-                                    <p className="text-white font-medium text-left">erajjamil@example.com</p>
+                                    <p className="text-white font-medium text-left">erajjamil07@gmail.com</p>
                                 </div>
                             </a>
 
